@@ -2,7 +2,7 @@ name: ravenjs/balancee
 
 services:
   app:
-    image: ${COMPOSE_PROJECT_NAME}:latest
+    image: ravenjs/balancee:latest
     build: .
     healthcheck:
       test: "curl -fs http://localhost:3000"
