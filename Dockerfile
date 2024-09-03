@@ -44,4 +44,4 @@ ENV NEXT_TELEMETRY_DISABLED 1
 EXPOSE 3000
 
 # Start the application
-CMD ["pnpm", "start"]
+CMD HOSTNAME="0.0.0.0" pnpm start
