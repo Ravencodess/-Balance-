@@ -1,0 +1,21 @@
+name: balancee
+
+services:
+  app:
+    image: ${COMPOSE_PROJECT_NAME}:latest
+    build: .
+    healthcheck:
+      test: "curl -fs http://localhost:3000"
+      interval: 3s
+      retries: 3
+      timeout: 5s
+
+  nginx:
+    image: nginx:latest
+    ports:
+      - 3080:80
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+    depends_on:
+      app:
+        condition: service_healthy
