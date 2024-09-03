@@ -1,4 +1,4 @@
-name: balancee
+name: ravenjs/balancee
 
 services:
   app:
