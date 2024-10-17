@@ -64,19 +64,19 @@ jobs:
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/balancee:latest
 
-  deploy:
-    needs: test
-    runs-on: ubuntu-latest
+  #deploy:
+    #needs: test
+    #runs-on: ubuntu-latest
 
-    steps:
-      - name: Deploy on server
-        uses: appleboy/ssh-action@master
-        with:
-          host: ${{ secrets.HOST }}
-          username: ${{ secrets.USERNAME }}
-          password: ${{ secrets.PASSWORD }}
-          script: |
-            cd balancee
-            git pull origin main
-            docker pull ${{ secrets.DOCKERHUB_USERNAME }}/balancee:latest
-            docker compose up -d
+    #steps:
+      #- name: Deploy on server
+        #uses: appleboy/ssh-action@master
+        #with:
+          #host: ${{ secrets.HOST }}
+          #username: ${{ secrets.USERNAME }}
+          #password: ${{ secrets.PASSWORD }}
+          #script: |
+            #cd balancee
+            #git pull origin main
+            #docker pull ${{ secrets.DOCKERHUB_USERNAME }}/balancee:latest
+            #docker compose up -d
