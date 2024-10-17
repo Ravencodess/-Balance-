@@ -1,4 +1,4 @@
-# Stage 1: Building the code
+# Stage 1: Building the code.
 FROM node:18-alpine AS builder
 
 # Set working directory
